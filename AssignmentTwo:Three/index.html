@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+<body>
+    <h1 id="firstClass" class="project_heading">This is the first day of my college...</h1>
+    <div class="project_container">
+        <img id="meInAnxiety" src="meInAnxiety.png" alt="me in anxiety">
+    </div>
+    <div>
+        <button id="feelButton" class="project_button">how do you feel right now?</button>
+    </div>
+    <div class="audio">
+        <audio id="audioPlayer" controls>
+            <source src="campus audio.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    <div>
+        <p id="lost" class="lost">I feel lost!!</p>
+        <img id="classroom" src="image2.png" alt="classroom" class="classroom">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<script>
+function setup() {
+    createCanvas(windowWidth, windowHeight); 
+    noiseDetail(1);
+}
+
+var yoff = 0; 
+
+function draw() {
+    background(0); 
+    translate(width / 2, height / 2); 
+    rotate(PI / 8); 
+
+    var r = 1; 
+    stroke(255); 
+    fill(255, 50); 
+    strokeWeight(1); 
+
+    var da = PI / 200; 
+    var dx = 0.01; 
+
+    beginShape(); 
+    var xoff = 0; 
+    for (var a = -PI / 2; a <= PI / 2; a += da) {
+        var n = noise(xoff, yoff); 
+        var r = sin(2 * a) * map(n, 0, 1, 25, 50); 
+        var x = r * cos(a); 
+        var y = sin(yoff) * r * sin(a); 
+        xoff += dx; 
+        vertex(x, y);
+    }
+
+    for (var a = PI / 2; a <= 3 * PI / 2; a += da) {
+        var n = noise(xoff, yoff); 
+        var r = sin(2 * a) * map(n, 0, 1, 50, 100); 
+        var x = r * cos(a);
+        var y = sin(yoff) * r * sin(a); 
+        xoff -= dx; 
+        vertex(x, y);
+    }
+
+    endShape(); 
+    yoff += 0.1; 
+}
+
+function updateSensorData(distance) {
+    sensorDistance = distance;
+}
+</script>
