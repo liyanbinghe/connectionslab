@@ -1,0 +1,103 @@
+body{
+    background-color: white;
+}
+
+.project_heading{
+  text-align: center;
+ 
+}
+
+
+.project_container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 100px;
+
+}
+
+.project_count{
+font-size:  100px;
+text-align: center;
+}
+
+ .project_button {
+    font-size: 30px;
+     background-color: #f0f0f0;
+     text-align: center;
+     padding: 20px;
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     right: 0;
+    }
+
+.audio {
+        display:flex;
+        flex-direction: column;
+        align-items:center;
+        }
+
+
+
+#lost{
+    display:none;
+    text-align: center;
+}
+   
+#classroom{
+    display:none;
+    text-align: center;
+}
+
+.lost{
+    display:flex;
+    flex-direction: column;
+    font-size: 100px;
+    align-items: center;
+
+}
+
+.overlay-container {
+    display:none;
+    position: relative;
+    width: max-content; /* This makes the container fit its content */
+    margin: 0 auto; /* Center the container */
+}
+
+#classroom {
+    display: block;
+    max-width: 100%; /* This ensures the classroom image is fully visible */
+}
+
+#aBook {
+    position: absolute;
+    top: 610px; 
+    left: 460px; 
+    width: 40px; /* Adjust this as needed */
+    height: 40px; /* Adjust this as needed */
+    z-index: 1; /* This makes the book image appear on top */
+}
+
+.nextPage{
+    display:none
+}
+
+.mouse{
+    position: absolute;
+    top: 750px; 
+    left: 1100px; 
+    width: 70px; /* Adjust this as needed */
+    height: 70px; /* Adjust this as needed */
+    z-index: 1; /* This makes the book image appear on top */
+
+}
+
+.whatClass{
+    display:flex;
+    flex-direction: column;
+    font-size: 100px;
+    align-items: center;
+
+
+}
